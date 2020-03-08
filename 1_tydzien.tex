@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage{caption}
+
+\title{\textbf{Opracowanie danych pomiarowych}}
+\author{Tymoteusz Chmielecki\\
+		Mateusz Bałuch}
+\date{02.03.2020}
+\begin{document}
+
+\maketitle
+
+\section{Cel ćwiczenia}
+Celem ćwiczenia było zapoznanie sie z metodami opracowywania i wykorzystywania wyników pomiarowych, w tym celu użyte zostało wahadło proste.
+
+\section{Wstep teoretyczny}
+\subsection{Niepewność pomiarowa}
+Niepewność pomiaru to parametr zwiazany z wynikiem pomiaru, charakteryzujacy rozrzut wyników, które można w uzasadniony sposób przypisać wartości mierzonej. Charakteryzuje ona
+rozrzut wartości (szerokość przedziału), wewnatrz którego można z zadowalajacym prawdopodobieństwem usytuować wartość wielkości mierzonej. Z definicji niepewności pomiarowej wynika, że nie może być ona wyznaczona doskonale dokładnie.
+\subsection{Wahadło matematyczne}
+Wahadłem matematycznym jest punktowa masa zawieszona na nieważkiej nici. Na potrzeby ćwiczenia użyliśmy kuli zawieszonej na cienkiej nici. Wychylamy wahadło z położenia równowagi i wprowadzamy je w ruch drgajacy prosty. Dana zależność opisuje okres jego drgań: $$ T = 2\pi\sqrt{\frac{l}{g}} $$
+Po przekształceniu otrzymujemy wzór na przyśpieszenie ziemskie jako funkcji okresu i długości nici: $$ g = \frac{4{\pi}^2l}{T^2} $$
+
+\section{Układ pomiarowy}
+Do przeprowadzenia pomiarów użyliśmy wahadła matematycznego złożonego z obciażnika zawieszonego na cienkiej nici przyczepionej do statywu. Jako przyrzadow pomiarowych użyliśmy stopera oraz przymiaru milimetrowego.
+
+\section{Wykonanie ćwiczenia}
+Na ćwiczenie złożyły sie 2 cześci.
+\subsection{Wyznaczenie $g$ na podstawie pomiaru 6 serii 20 wahań}
+\subsection{Badanie zależności $T$ od $l$}
+
+\section{Wyniki}
+\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{Pomiary okresu drgań przy ustalonym $l = 0.404m$} \label{tab:title} 
+\begin{tabular}{c | c | c | c}
+	Pomiar & Liczba okresów $k$ & Czas $t$ dla $k$ okresów $[s]$ & Okres $T_i = ^t/_k [s]$\\ \hline
+	1 & 20 & 25.00 & 1.25\\
+	2 & 20 & 25.16 & 1.258\\
+	3 & 20 & 25.22 & 1.261\\
+	4 & 20 & 25.28 & 1.264\\
+	5 & 20 & 25.31 & 1.2655\\
+	6 & 20 & 25.37 & 2.2685\\
+\end{tabular}\par
+\end{minipage}
+
+
+\end{document}
