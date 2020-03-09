@@ -1,6 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage{caption}
 \usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
 
 \title{\textbf{Opracowanie danych pomiarowych}}
 \author{Tymoteusz Chmielecki\\
@@ -27,14 +29,19 @@ Do przeprowadzenia pomiarów użyliśmy wahadła matematycznego złożonego z ob
 \section{Wykonanie ćwiczenia}
 Na ćwiczenie złożyły sie 2 cześci.
 \subsection{Wyznaczenie $g$ na podstawie serii pomiarów wahań}
-\subsection{Badanie zależności $T$ od $l$}
+Wprawiliśmy wahadło w ruch a następnie korzystając ze stopera zmierzyliśmy czas t potrzebny na wykonanie 20 drgań. 
+Zmierzyliśmy długość nici na której zawieszony był obciążnik przy użyciu przymiaru milimetrowego.
 
+\subsection{Badanie zależności $T$ od $l$}
+Podobnie jak w poprzednim punkcie wykonano pomiar czasu t potrzebnego na wykonanie 20 okresów drgania wahadła. Długość nici stopniowo zmniejszaliśmy od 51.5cm do 12.5cm.
+
+\clearpage
 \section{Wyniki}
 \begin{minipage}{\linewidth}
 \centering
 \captionof{table}{Pomiary okresu drgań przy ustalonym $l = 0.404m$} \label{tab:title} 
 \begin{tabular}{c | c | c | c}
-	Pomiar & Liczba okresów $k$ & Czas $t$ dla $k$ okresów $[s]$ & Okres $T_i = ^t/_k [s]$\\ \hline
+	Pomiar & Liczba okresów $k$ & Czas $t$ dla $k$ okresów $[s]$ & Okres $T_i = \frac{t}{k} [s]$\\ \hline
 	1 & 20 & 25.00 & 1.25\\
 	2 & 20 & 25.16 & 1.258\\
 	3 & 20 & 25.22 & 1.261\\
@@ -49,7 +56,7 @@ Na ćwiczenie złożyły sie 2 cześci.
 \centering
 \captionof{table}{Pomiar zależności okresu drgań od długości wahadła} \label{tab:title} 
 \begin{tabular}{c | c | c | c | c | c}
-	Pomiar & $L [m]$ & $k$  & $t [s]$ & $T_i [s] $ & $g_i [\frac{m}{s^2}]$\\ \hline
+	Pomiar & $L [cm]$ & $k$  & $t [s]$ & $T_i [s] $ & $g_i [\frac{m}{s^2}]$\\ \hline
 	1 & 51.5 & 20 & 28.56 & 1.428 & 9.97\\
 	2 & 44.2 & 20 & 26.56 & 1.328 & 9.89\\
 	3 & 36.5 & 20 & 24.16 & 1.208 & 9.87\\
@@ -68,15 +75,41 @@ Zakładamy, że wyniki nie zawieraja błedów grubych z uwagi na różnice miedz
 Wartościa okresu, która przyjmujemy jest średnia arytmetyczna z uzyskanych pomiarów: $$ T_{sr} = \frac{1}{n}\displaystyle\sum_{i=1}^n T_i \refstepcounter{equation}\eqno(\theequation) $$ Dla uzyskanych przez nas danych eksperymentalnych $ T_{sr} = 1.261 $
 Przyśpieszenie ziemskie $g$ wyznaczone ze wzoru $(2)$ wynosi: $$ g = 10.02757 \frac{m}{s^2} \approx 10.03 \frac{m}{s^2} $$
 Wynaczyliśmy również niepewność (typu A) pomiaru okresu ze wzoru: $$ u(T_{sr}) = \sqrt{\frac{1}{n(n-1)}\displaystyle\sum_{i=1}^n (T_i - T_{sr})} \refstepcounter{equation}\eqno(\theequation) $$
-Po podstawieniu danych eksperymentalnych otrzymaliśmy $u(T_{sr} \approx 0 s$
+Po podstawieniu danych eksperymentalnych otrzymaliśmy $u(T_{sr}) \approx 0 s$
 Nastepnie wyznaczyliśmy niepewność złożona ze wzoru:
 $$ u_c(g) = \sqrt{(\frac{{\partial}g}{{\partial}T})^2 \cdot u(T)^2 + (\frac{{\partial}g}{{\partial}l})^2 \cdot u(l)^2} \refstepcounter{equation}\eqno(\theequation) $$
-co dało nam wynik: $$ u_c(g) = \sqrt{(\frac{64\pi^4l^2}{T^6}) \cdot u(T)^2 + (\frac{16\pi^4}{T^4} \cdot u(l)^2} \approx 0.122 \ \frac{m}{s^2}$$
+co dało nam wynik: $$ u_c(g) = \sqrt{(\frac{64\pi^4l^2}{T^6}) \cdot u(T)^2 + (\frac{16\pi^4}{T^4}) \cdot u(l)^2} \approx 0.122 \ \frac{m}{s^2}$$
 Aby porównać otrzymana wartość z tablicowa obliczymy niepewność rozszerzona ze wzoru: $$ U_c(g) = k \cdot u_c(g) = 2 \cdot 0.122\ \frac{m}{s^2} = 0.244\ \frac{m}{s^2} \approx 0.24\ \frac{m}{s^2} $$
 Czyli przyspieszenie ziemskie ma wartość: $$ g = (10.03 \pm 0.24)\ \frac{m}{s^2}$$
 Wartość tablicowa ($g = 9.80665\ \frac{m}{s^2}$) przyśpieszenie ziemskiego mieści sie w wyznaczonym przedziale co oznacza, że pomiary zostały poprawnie wykonane.
 
 \subsection{Badanie zależności $T$ od $l$}
-Podnoszac do kwadratu wzór $(1)$ otrzymujemy nastepujaca zależność: $$ T^2 = \frac{4\pi^2}{g} \cdot l $$
+Podnoszac do kwadratu wzór $(1)$ otrzymujemy nastepujaca zależność: $$ T^2 = \frac{4\pi^2}{g} \cdot l \refstepcounter{equation}\eqno(\theequation) $$
+Otrzymujemy wzór funkcji $T^2$ w zależności od l. Jest to funkcja liniowa o współczynniku kierunkowym: $$ a = \frac{4\pi^2}{g} \refstepcounter{equation}\eqno(\theequation) $$
+
+Czynniki otrzymane metodą regresji liniowej wynoszą: $$a = 4.00005\frac{m}{s^2} \approx 4\frac{m}{s^2}$$  $$b=-0.0120153\frac{m}{s^2} \approx -0.012\frac{m}{s^2}$$
+$$U(a)=0.109\frac{m}{s^2} $$
+
+Na podstawie niepewności pomiarowej $U(a)$ obliczona została niepewność $U(g)$ zgodnie ze wzorem:
+$$ U(g) = \sqrt{(\frac{4\pi^2}{a^2})^2 \cdot u(a)^2} = \frac{4\pi^2}{a^2} \cdot u(a) $$
+Po podstawieniu danych:
+$$ U(g) = \frac{4\pi^2}{4^2} \cdot 0.109 = 0.085565 \approx 0.085 $$
+
+Otrzymaliśmy wartość przyśpieszenia ziemskiego równą:
+$$ g = \frac{4\pi^2}{a} \approx (9.86 \pm 0.085)\ \frac{m}{s^2} $$
+
+Wartość tablicowa ($g = 9.80665\ \frac{m}{s^2}$) przyśpieszenie ziemskiego mieści sie w wyznaczonym przedziale co oznacza, że pomiary zostały poprawnie wykonane.
+
+
+
+\clearpage
+\section{Wnioski}
+\begin{enumerate}
+	\item Dokonane pomiary pozwoliły obliczyć wartość przyśpieszenia ziemskiego która wyniosła $ g = (10.03 \pm 0.24)\ \frac{m}{s^2}$
+	\item Metoda regresji liniowej zależności $T^2$ od L pozwoliła wyliczyć wartość przyśpieszenia ziemskiego równą $ g = (9.86 \pm 0.085)\ \frac{m}{s^2}$
+	\item Dokładność wyników zależy od refleksu osoby odpowiedzialnej za pomiar czasu oraz od odpowiedniego doobrania wychylenia by kąt był odpowiednio mały
+	\item Wyznaczanie przyśpieszenia grawitacyjnego Ziemi przy pomocy wahadła daje wyniki zbliżone do tablicowych
+\end{enumerate}
+
 
 \end{document}
